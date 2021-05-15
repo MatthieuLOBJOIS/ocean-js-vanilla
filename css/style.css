@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#container {
+    background-image: url("../assets/images/oceanPix.jpg");
+    background-size: 100% 100%;
+    height: 100vh;
+    width: 100vw;
+}
+
+#header {
+    height: 20vh;
+}
+
+.ocean-info {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.info-button {
+    height: 5em;
+    width: 5em;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+	animation: info-button 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation-iteration-count: infinite;
+}
+
+@keyframes info-button{0%{transform:translateY(0)}50%{transform:translateY(-40px)}100%{transform:translateY(0)}}
+
+.info-button-icon {
+    font-size: 5em;
+    color: #82ccdd;
+    transform: rotate(0deg);
+}
+
+.info-button-icon--up {
+    transform: rotate(180deg);
+}
+
+.info-popup {
+    position: absolute;
+    width: 50%;
+    color: white;
+    bottom: -6em;
+    transition: all 1s;
+}
+
+.info-popup-up {
+    bottom: 0em;
+}
+
+#footer {
+    height: 10vh;
+}
+
+.menu-list {
+    margin: 0;
+    color: white;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    padding: 2em;
+    font-size: 1.3em;
+}
+
+.list-item {
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.list-item:hover {
+    color: #82ccdd;
+    list-style: square;
+}
