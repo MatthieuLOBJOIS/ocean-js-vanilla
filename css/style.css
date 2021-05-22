@@ -53,7 +53,7 @@ body {
     position: absolute;
     width: 50%;
     color: white;
-    bottom: -6em;
+    bottom: -30em;
     transition: all 1s;
 }
 
@@ -84,4 +84,86 @@ body {
 .list-item:hover {
     color: #82ccdd;
     list-style: square;
+}
+
+.burger-button {
+    display: none;
+}
+
+@media (max-width: 1250px) { 
+    .burger-button {
+        margin-left: 1em;
+        width: 5em;
+        height: 5em;
+        padding: 0;
+        border: 0;
+        display: flex;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        background: none;
+    }
+    
+    .burger-bar {
+        width: 90%;
+        height: 10%;
+        background-color: grey;
+        transition: all 1s;
+    }
+    
+    .burger-bar:nth-child(2) {
+        width: 70%;
+    }
+
+    
+    .burger-button--close {
+        position: absolute;
+        transition: all 1s;
+    }
+
+    .burger-bar--close:nth-child(1) {
+        transform: translateY(25px) rotate(45deg);
+    }
+
+    .burger-bar--close:nth-child(3) {
+        transform: translateY(-20px) rotate(-45deg);
+    }
+
+    .burger-bar--close:nth-child(2) {
+        transform: translateX(-100px);
+    }
+
+    .menu {
+        position: absolute;
+        left: -10em;
+        transition: all 1s;
+        height: 100vh;
+    }
+
+    .menu--display {
+        left: 0;
+    }
+
+    .menu-list {
+        height: 70%;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .info-popup {
+        width: 80%;
+    }
+}
+
+@media (max-width: 799px) {
+    .info-popup {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 599px) {
+    .info-popup {
+        font-size: 0.6em;
+    }
 }

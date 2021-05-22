@@ -17,6 +17,8 @@ const app = {
         app.generateButton().addEventListener('click', app.handleButtonClick);
         app.generateDescriptionBloc();
         app.arrow = "down";
+        app.generateBurger().addEventListener("click", app.openMenuBurger);
+        //app.generateMenuBurger();
     },
 
     generateMenu: () => {
@@ -71,6 +73,33 @@ const app = {
             div.classList.remove("info-popup-up");
             app.arrow = "down";
         }
+    },
+
+    generateBurger: () => {
+        const button = document.createElement("button");
+        button.className = "burger-button";
+        for (var i = 0; i < 3; i++) {
+        const bar = document.createElement("div");
+        bar.className = "burger-bar";
+        bar.classList.add("bar" + i);
+        button.appendChild(bar);
+        }
+        return app.header.appendChild(button);
+    },
+
+    openMenuBurger: () => {
+        console.log("click");
+        const menu = document.querySelector(".menu");
+        const button = document.querySelector(".burger-button");
+        menu.classList.toggle("menu--display");
+        button.classList.toggle("burger-button--close");
+
+        for (var i = 0; i < 3; i++) {
+            const bar = document.querySelector(".bar" + i);
+            bar.classList.toggle("burger-bar--close")
+
+        }
+
     }
 };
 
